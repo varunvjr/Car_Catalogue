@@ -1,0 +1,32 @@
+<%- include("../partials/header")%>
+<div class="ui main text container segment">
+	<div class="ui huge header">
+		<h1 class="h1">
+			<%=car.brandname%>
+		</h1>
+	</div>
+	<div>
+	<img class="ui centered rounded image"src="<%=car.image%>">
+	</div>
+	<div class="pull-right">
+		<h3>
+			<i class="rupee sign icon"></i><%=car.price%>/- 
+		</h3>
+	</div>
+	<div class="content">
+		<span><%=car.created.toDateString()%></span>
+	</div>
+	<div class="header">
+		<p class="display-1"><%=car.carname%></p>
+	</div>
+	<div class="description">
+		<p><%=car.body%></p>
+	</div>
+	<a class="ui green basic button"href="/cars/<%=car._id%>/edit">Edit Blog</a>
+	<form style="float:left;"method="POST" action="/cars/<%=car._id%>?_method=DELETE">
+		<button class="ui red basic button">
+			Delete
+		</button>
+	</form>
+</div>
+<%- include("../partials/footer")%>
